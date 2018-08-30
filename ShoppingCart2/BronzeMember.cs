@@ -2,17 +2,13 @@
 {
     public class BronzeMember : Member
     {
-        double price;
-
         public BronzeMember(int MemberID, string MemberName)
         {
             this.MemberID = MemberID;
             this.MemberName = MemberName;
         }
 
-        BronzeMember cali = new BronzeMember(01, "Cali OConnor");
-
-        public double IsBronze()
+        public double IsBronze(double price)
         {
             price = price * 1;
             return price;
