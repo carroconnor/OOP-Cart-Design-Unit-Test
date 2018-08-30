@@ -57,7 +57,9 @@ namespace ShoppingCart2
 
             } while (true);
 
+           
             var productChoice = Console.ReadLine();
+            Start:
             do
             {
                 if (productChoice == "1")
@@ -91,7 +93,6 @@ namespace ShoppingCart2
                 }
             } while (true);
 
-            Console.ReadLine();
             Console.WriteLine("Great! Item has been added to your cart.");
             Console.WriteLine("1. Add more items to your cart.");
             Console.WriteLine("2. View your cart and cart options.");
@@ -101,46 +102,15 @@ namespace ShoppingCart2
             {
                 Member member = new Member();
                 member.BringMenu();
-                var otherProductChoice = Console.ReadLine();
-                do
-                {
-                    if (otherProductChoice == "1")
-                    {
-                        cart.AddProduct(basketball);
-                        break;
-                    }
-                    else if (otherProductChoice == "2")
-                    {
-                        cart.AddProduct(sunglasses);
-                        break;
-                    }
-                    else if (otherProductChoice == "3")
-                    {
-                        cart.AddProduct(shoes);
-                        break;
-                    }
-                    else if (otherProductChoice == "4")
-                    {
-                        cart.AddProduct(umbrella);
-                        break;
-                    }
-                    else if (otherProductChoice == "5")
-                    {
-                        cart.AddProduct(flipflops);
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("That does not look like a valid product. Try again");
-                    }
-                } while (true);
+                productChoice = Console.ReadLine();
+                goto Start;  
             }
             else if (secondLoopChoice == "2")
             {
                 Console.WriteLine("Your shopping cart items are listed below");
                 cart.ShowCart();
                 Console.WriteLine("1. Checkout");
-                Console.WriteLine("1. Delete Items from shopping cart");
+                Console.WriteLine("2. Delete Items from shopping cart");
 
                 var cartOption = Console.ReadLine();
 
@@ -164,7 +134,6 @@ namespace ShoppingCart2
             }
 
             Console.ReadLine();
-
         }
     }
 }

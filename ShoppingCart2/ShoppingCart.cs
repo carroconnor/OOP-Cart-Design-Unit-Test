@@ -32,8 +32,8 @@ namespace ShoppingCart2
             foreach (var item in MemberShoppingCart)
             {
                 total += item.Price;
-                Console.WriteLine("Thankyou for shopping with us. Your total is {0} ", total.ToString());
             }
+            Console.WriteLine("Thankyou for shopping with us. Your subtotal is $ {0} ", total.ToString());
         }
     }
 }
